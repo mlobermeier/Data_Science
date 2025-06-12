@@ -1,0 +1,13 @@
+
+services:
+  test:
+    build: .
+    command: pytest
+    volumes:
+      - .:/app
+
+  script:
+    build: .
+    command: python3 -c "from functions import find_unique; print(find_unique([9,7,9,3,3]))"
+    volumes:
+      - .:/app
