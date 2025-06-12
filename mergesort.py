@@ -44,11 +44,29 @@ def merge_sort(list_to_sort_by_merge):
             i += 1
 
 
+# Ursprüngliche Liste
 my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-x = range(len(my_list))
-plt.plot(x, my_list)
-plt.show()
+
+# Plot vorher
+plt.figure(figsize=(10, 4))
+plt.subplot(1, 2, 1)
+plt.plot(range(len(my_list)), my_list, marker='o', linestyle='-', color='red')
+plt.title("Vor dem Sortieren")
+plt.xlabel("Index")
+plt.ylabel("Wert")
+plt.grid(True)
+
+# Sortieren
 merge_sort(my_list)
-x = range(len(my_list))
-plt.plot(x, my_list)
+
+# Plot nachher
+plt.subplot(1, 2, 2)
+plt.plot(range(len(my_list)), my_list, marker='o', linestyle='-',
+         color='green')
+plt.title("Nach dem Sortieren")
+plt.xlabel("Index")
+plt.ylabel("Wert")
+plt.grid(True)
+
+plt.tight_layout()
 plt.show()
